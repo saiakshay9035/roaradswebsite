@@ -360,41 +360,96 @@ body {
 
 /* Campaign Package Section */
 .campaign-package {
-    padding: 120px 0;
-    background: var(--black);
+    padding: 140px 0;
+    background: var(--dark-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.campaign-package::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+}
+
+.section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.campaign-package .section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 5vw, 64px);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 80px;
 }
 
 .package-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .package-card {
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 40px 32px;
-    text-align: center;
+    padding: 48px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
     transition: all 0.4s ease;
+    background: transparent;
+    cursor: default;
+}
+
+.package-card:last-child {
+    border-right: none;
 }
 
 .package-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--orange);
-    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.15);
+    background: rgba(255, 107, 0, 0.05);
+    transform: none;
+    box-shadow: none;
+}
+
+.package-card:hover .package-number {
+    color: var(--orange);
+}
+
+.package-card:hover .package-line {
+    width: 100%;
+}
+
+.package-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    margin-bottom: 32px;
+    transition: color 0.4s ease;
 }
 
 .package-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 24px;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 24px;
     position: relative;
 }
 
 .package-card h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
     margin-bottom: 16px;
     color: var(--white);
@@ -402,8 +457,19 @@ body {
 
 .package-card p {
     color: var(--silver);
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.package-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--orange);
+    transition: width 0.5s ease;
 }
 
 /* Concept Section */
@@ -2277,6 +2343,8 @@ body {
     .bts-grid { grid-template-columns: repeat(2, 1fr); }
     .bts-card.large { grid-column: span 1; }
     .package-grid { grid-template-columns: repeat(2, 1fr); }
+    .package-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .package-card:last-child { border-bottom: none; }
     .faq-grid { grid-template-columns: 1fr; }
 }
 
