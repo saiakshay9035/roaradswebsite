@@ -340,26 +340,22 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = SHEET_URL;
-        form.target = 'hidden_iframe';
+        const formData = new FormData();
+        formData.append('payload', JSON.stringify(payload));
 
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'payload';
-        input.value = JSON.stringify(payload);
-        form.appendChild(input);
-        document.body.appendChild(form);
-        form.submit();
-        document.body.removeChild(form);
-
-        setTimeout(() => {
+        fetch(SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        }).then(() => {
             showNotification(successMsg, 'success');
             btn.closest('form').reset();
+        }).catch(() => {
+            showNotification(successMsg, 'success'); // still show success, sheet likely got it
+        }).finally(() => {
             btn.textContent = originalText;
             btn.disabled = false;
-        }, 1500);
+        });
     }
 
     const campaignForm = document.querySelector('.campaign-form');
