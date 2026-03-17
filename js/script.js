@@ -332,49 +332,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submissions
+    // Google Sheets integration via Apps Script
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycby068FvAJzubgFCD9Jlnezk8jcdd1SYwt-0PswABqr60T0nqZSCoAaVbfkIxiLy7LplXQ/exec';
+
+    function submitToSheet(payload, btn, successMsg) {
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = SHEET_URL;
+        form.target = 'hidden_iframe';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'payload';
+        input.value = JSON.stringify(payload);
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+
+        setTimeout(() => {
+            showNotification(successMsg, 'success');
+            btn.closest('form').reset();
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 1500);
+    }
+
     const campaignForm = document.querySelector('.campaign-form');
     const riderForm = document.querySelector('.rider-form form');
 
     if (campaignForm) {
         campaignForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const submitBtn = this.querySelector('.btn-primary');
-            const originalText = submitBtn.textContent;
-            
-            // Loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Campaign booked! We\'ll contact you within 24 hours to discuss your strategy.', 'success');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            const f = this;
+            submitToSheet({
+                formType: 'brand',
+                row: [
+                    new Date().toLocaleString('en-IN'),
+                    f.querySelector('input[placeholder="Your Name"]').value,
+                    f.querySelector('input[placeholder="Brand / Company Name"]').value,
+                    f.querySelector('input[type="email"]').value,
+                    f.querySelector('input[type="tel"]').value,
+                    f.querySelector('select').value,
+                    f.querySelector('textarea').value
+                ]
+            }, this.querySelector('.btn-primary'), 'Campaign booked! We\'ll contact you within 24 hours.');
         });
     }
 
     if (riderForm) {
         riderForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const submitBtn = this.querySelector('.btn-primary');
-            const originalText = submitBtn.textContent;
-            
-            // Loading state
-            submitBtn.textContent = 'Applying...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Welcome to the rider network! We\'ll contact you for onboarding.', 'success');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            const f = this;
+            const selects = f.querySelectorAll('select');
+            submitToSheet({
+                formType: 'rider',
+                row: [
+                    new Date().toLocaleString('en-IN'),
+                    f.querySelector('input[placeholder="Full Name"]').value,
+                    f.querySelector('input[type="tel"]').value,
+                    f.querySelector('input[type="email"]').value,
+                    selects[0].value,
+                    selects[1].value
+                ]
+            }, this.querySelector('.btn-primary'), 'Welcome to the rider network! We\'ll contact you for onboarding.');
         });
     }
 
