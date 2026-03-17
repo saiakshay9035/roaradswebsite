@@ -8,18 +8,20 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roarads.com/">
+    <meta property="og:url" content="https://theroarads.com/">
     <meta property="og:title" content="ROAR ADS — The AD That Actually Reaches Real Audience">
     <meta property="og:description" content="India's first mobile advertising network powered by Harley Davidson riders and smart LED displays. Reach offline and online audiences.">
-    <meta property="og:image" content="https://roarads.com/og-image.jpg">
+    <meta property="og:image" content="https://theroarads.com/images/founder.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://roarads.com/">
+    <meta property="twitter:url" content="https://theroarads.com/">
     <meta property="twitter:title" content="ROAR ADS — The AD That Actually Reaches Real Audience">
     <meta property="twitter:description" content="India's first mobile advertising network powered by Harley Davidson riders and smart LED displays.">
-    <meta property="twitter:image" content="https://roarads.com/og-image.jpg">
+    <meta property="twitter:image" content="https://theroarads.com/images/founder.jpg">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23FF6B00'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Montserrat,sans-serif' font-weight='900' fill='black'>R</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
@@ -33,11 +35,11 @@
             <div class="logo">ROAR ADS</div>
             <div class="nav-links">
                 <a href="#concept">Concept</a>
+                <a href="#what-you-get">What You Get</a>
                 <a href="#pilot">Pilot</a>
                 <a href="#why-roar">Why Roar</a>
                 <a href="#brands">For Brands</a>
                 <a href="#riders">For Riders</a>
-                <a href="#data">Data</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <span></span>
@@ -91,7 +93,7 @@
     </section>
 
     <!-- Campaign Package Section -->
-    <section class="campaign-package">
+    <section id="what-you-get" class="campaign-package">
         <div class="container">
             <div class="section-header">
                 <h2>What You Get</h2>
@@ -102,7 +104,7 @@
                 <div class="package-card">
                     <div class="package-icon bike-icon"></div>
                     <h3>Street Presence</h3>
-                    <p>Harley rides through peak Bengaluru areas during 8-10 AM and 6-8 PM traffic</p>
+                    <p>Harley rides through peak Bengaluru traffic areas during morning and evening rush hours</p>
                 </div>
                 
                 <div class="package-card">
@@ -302,31 +304,31 @@
             <div class="section-header">
                 <h2>Book Your Campaign</h2>
                 <p>Be among the first brands to experience mobile advertising revolution</p>
+                <div class="social-proof">
+                    <div class="proof-item"><span class="proof-dot"></span> Currently in talks with 3 Bengaluru brands</div>
+                    <div class="proof-item"><span class="proof-dot"></span> Beta launch — limited slots available</div>
+                </div>
             </div>
             
             <div class="campaign-builder">
                 <form class="campaign-form">
                     <div class="form-row">
-                        <input type="text" placeholder="Company Name" required>
-                        <input type="email" placeholder="Work Email" required>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Brand / Company Name" required>
                     </div>
                     <div class="form-row">
-                        <select required>
-                            <option value="">Campaign Objective</option>
-                            <option value="awareness">Brand Awareness</option>
-                            <option value="launch">Product Launch</option>
-                            <option value="event">Event Promotion</option>
-                            <option value="app">App Downloads</option>
-                        </select>
-                        <select required>
-                            <option value="">Campaign Duration</option>
-                            <option value="1week">1 Week</option>
-                            <option value="2weeks">2 Weeks</option>
-                            <option value="1month">1 Month</option>
-                            <option value="custom">Custom Duration</option>
-                        </select>
+                        <input type="email" placeholder="Work Email" required>
+                        <input type="tel" placeholder="WhatsApp Number" required>
                     </div>
-                    <textarea placeholder="Campaign Brief (What's your brand story?)" rows="4"></textarea>
+                    <select required>
+                        <option value="">What are you promoting?</option>
+                        <option value="awareness">Brand Awareness</option>
+                        <option value="launch">Product Launch</option>
+                        <option value="event">Event Promotion</option>
+                        <option value="app">App Downloads</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Anything specific you want us to know? (optional)" rows="3"></textarea>
                     <button type="submit" class="btn-primary">Book Your Campaign</button>
                 </form>
                 
@@ -352,7 +354,7 @@
         <div class="container">
             <div class="story-content">
                 <div class="story-image">
-                    <img src="images/founder.jpg" alt="Founder with Harley Davidson" class="founder-photo">
+                    <img src="images/founder.jpg" alt="Founder with Harley Davidson" class="founder-photo" onerror="this.style.background='linear-gradient(135deg,#1a1a1a,#333)';this.style.minHeight='500px';this.style.display='block'">
                 </div>
                 <div class="story-text">
                     <div class="story-badge">The Origin</div>
@@ -557,6 +559,42 @@
                         <div class="counter-number">Limited Spots</div>
                         <div class="counter-label">For Founding Brands</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common Questions</h2>
+                <p>Everything brands ask before booking</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How does a campaign work?</h4>
+                    <p>You send us your brand creative. We load it on the LED display, ride through your target areas during peak traffic, and send you GPS-verified proof-of-play footage the same day.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the minimum campaign duration?</h4>
+                    <p>We recommend a minimum of 3 days to see meaningful reach. Most brands start with a 1-week pilot to test the format before scaling.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How do I track my campaign?</h4>
+                    <p>Every ride is GPS-tracked. You get a daily report with routes covered, hours active, and footage from the ride. ERMS also monitors brand sentiment shifts during your campaign.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What areas do you cover in Bengaluru?</h4>
+                    <p>MG Road, Koramangala, Indiranagar, HSR Layout, Whitefield, and Electronic City corridors. Custom routes available on request.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What creative format do you need?</h4>
+                    <p>MP4 video (10-30 seconds), 16:9 ratio, minimum 1080p. We can also help with basic creative if needed.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are you operational right now?</h4>
+                    <p>We're in beta testing phase. Founding brand slots are being confirmed now. Book your campaign and we'll schedule your launch date personally.</p>
                 </div>
             </div>
         </div>

@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.2, 
             ease: "power3.out" 
         }, "-=0.2")
+        .from('.hero-tagline', { 
+            opacity: 0, 
+            y: 30, 
+            duration: 0.8, 
+            ease: "power3.out" 
+        }, "-=0.6")
         .from('.hero-subtitle', { 
             opacity: 0, 
             y: 30, 
@@ -172,6 +178,36 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             animateCounter(metric, target);
         }
+    });
+
+    // FAQ animations
+    gsap.utils.toArray('.faq-item').forEach((item, i) => {
+        gsap.from(item, {
+            opacity: 0,
+            y: 40,
+            duration: 0.7,
+            delay: i * 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: item,
+                start: "top 85%"
+            }
+        });
+    });
+
+    // Package card animations
+    gsap.utils.toArray('.package-card').forEach((card, i) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 60,
+            duration: 0.8,
+            delay: i * 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%"
+            }
+        });
     });
 
     // Navbar scroll effect
