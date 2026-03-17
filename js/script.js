@@ -180,6 +180,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Bold statement animation
+    gsap.from('.statement-line', {
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.bold-statement',
+            start: "top 70%"
+        }
+    });
+
+    gsap.from('.statement-accent', {
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        delay: 0.4,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.bold-statement',
+            start: "top 70%"
+        }
+    });
+
+    // CTA section animation
+    gsap.from('.data-eyebrow, .data-headline, .data-sub, .data-actions, .data-benefits', {
+        opacity: 0,
+        y: 40,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.data-inner',
+            start: "top 70%"
+        }
+    });
+
     // FAQ animations
     gsap.utils.toArray('.faq-item').forEach((item, i) => {
         gsap.from(item, {
