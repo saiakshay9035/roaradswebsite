@@ -2226,32 +2226,57 @@ body {
     .nav-container { padding: 0 16px; }
     .nav-links { display: none; }
     .mobile-menu-btn { display: flex; }
-    .hero-content { padding: 100px 16px 60px; }
+    .hero-content { padding: 100px 16px 60px; grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .hero-text h1 { font-size: clamp(32px, 8vw, 48px); }
+    .hero-subtitle { font-size: 16px; }
     .hero-actions { 
         flex-direction: column; 
         align-items: center;
         gap: 16px;
     }
     .hero-stats {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
         gap: 24px;
+        flex-wrap: wrap;
     }
+    .stat-number { font-size: 22px; }
     .btn-primary, .btn-secondary {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
     }
+    .bold-statement { padding: 80px 0; }
+    .statement-line, .statement-accent { font-size: clamp(28px, 7vw, 48px); }
+    .campaign-package { padding: 80px 0; }
+    .package-grid { grid-template-columns: 1fr; }
+    .package-card { padding: 32px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .package-card:last-child { border-bottom: none; }
     .form-row { grid-template-columns: 1fr; }
+    .campaign-builder { grid-template-columns: 1fr; gap: 32px; }
+    .campaign-form { padding: 24px; }
+    .campaign-preview { display: none; }
     .advantage-grid { grid-template-columns: 1fr; }
+    .pilot-content { grid-template-columns: 1fr; gap: 40px; }
+    .pilot-visual { display: none; }
     .equipment-grid { grid-template-columns: 1fr; }
+    .riders-content { grid-template-columns: 1fr; gap: 32px; }
+    .rider-form { padding: 24px; }
     .why-grid { grid-template-columns: 1fr; }
+    .story-content { grid-template-columns: 1fr; gap: 32px; }
+    .founder-photo { height: 300px; }
+    .data-inner { padding: 80px 0; }
+    .data-headline { font-size: clamp(36px, 8vw, 56px); }
+    .data-actions { flex-direction: column; align-items: center; }
+    .btn-whatsapp { width: 100%; max-width: 300px; justify-content: center; }
+    .btn-large { padding: 16px 32px !important; font-size: 16px !important; }
+    .data-benefits { flex-direction: column; align-items: center; gap: 16px; }
+    .faq-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; gap: 40px; }
     .footer-links { grid-template-columns: 1fr; gap: 24px; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
     .footer-meta { flex-direction: column; gap: 16px; }
-    .story-content { grid-template-columns: 1fr; gap: 40px; }
-    .founder-placeholder { height: 400px; }
-    .package-grid { grid-template-columns: 1fr; }
-    .faq-grid { grid-template-columns: 1fr; }
     .social-proof { flex-direction: column; align-items: center; gap: 12px; }
+    .tier-cards { grid-template-columns: 1fr; }
+    .section-header h2 { font-size: clamp(28px, 6vw, 40px); }
+    .big-quote { font-size: 18px; }
 }
