@@ -466,12 +466,17 @@ document.addEventListener('DOMContentLoaded', function() {
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <div class="notification-icon">${type === 'success' ? '✓' : 'ℹ'}</div>
-            <div class="notification-message">${message}</div>
-        </div>
-    `;
+    const content = document.createElement('div');
+    content.className = 'notification-content';
+    const icon = document.createElement('div');
+    icon.className = 'notification-icon';
+    icon.textContent = type === 'success' ? '✓' : 'ℹ';
+    const msg = document.createElement('div');
+    msg.className = 'notification-message';
+    msg.textContent = message;
+    content.appendChild(icon);
+    content.appendChild(msg);
+    notification.appendChild(content);
     
     // Styles
     Object.assign(notification.style, {
@@ -490,19 +495,13 @@ function showNotification(message, type = 'info') {
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         maxWidth: '400px',
         fontSize: '14px',
-        fontWeight: '500'
+        fontWeight: '500',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px'
     });
     
-    notification.querySelector('.notification-content').style.cssText = `
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    `;
-    
-    notification.querySelector('.notification-icon').style.cssText = `
-        font-size: 18px;
-        font-weight: bold;
-    `;
+    notification.querySelector('.notification-icon').style.cssText = `font-size: 18px; font-weight: bold;`;
     
     document.body.appendChild(notification);
     
