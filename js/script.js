@@ -248,6 +248,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Exit Intent Popup
+    const exitPopup = document.getElementById('exitPopup');
+    const exitPopupClose = document.getElementById('exitPopupClose');
+    const exitPopupForm = document.getElementById('exitPopupForm');
+    let exitPopupShown = false;
+
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY <= 0 && !exitPopupShown) {
+            exitPopupShown = true;
+            exitPopup.classList.add('active');
+        }
+    });
+
+    exitPopupClose.addEventListener('click', () => {
+        exitPopup.classList.remove('active');
+    });
+
+    exitPopup.addEventListener('click', function(e) {
+        if (e.target === exitPopup) exitPopup.classList.remove('active');
+    });
+
+    exitPopupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const inputs = this.querySelectorAll('input');
+        submitToSheet({
+            formType: 'rider',
+            row: [
+                new Date().toLocaleString('en-IN'),
+                inputs[0].value,
+                inputs[1].value,
+                'Exit Popup Lead',
+                '',
+                ''
+            ]
+        }, this.querySelector('.btn-primary'), 'Got it! Sai will WhatsApp you shortly.');
+        setTimeout(() => exitPopup.classList.remove('active'), 2000);
+    });
+
     // Navbar scroll effect
     let lastScrollY = 0;
     window.addEventListener('scroll', () => {
