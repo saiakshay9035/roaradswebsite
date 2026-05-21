@@ -364,12 +364,6 @@ body {
     letter-spacing: 0.1em;
 }
 
-/* Concept Section */
-.concept {
-    padding: 120px 0;
-    background: var(--dark-gray);
-}
-
 /* Campaign Package Section */
 .campaign-package {
     padding: 140px 0;
@@ -1589,12 +1583,6 @@ body {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Data Section - Early Access CTA */
-.data {
-    padding: 120px 0;
-    background: var(--dark-gray);
-}
-
 .early-access-cta {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1752,6 +1740,7 @@ body {
 .data {
     padding: 0;
     background: var(--black);
+    overflow: hidden;
 }
 
 .data-inner {
@@ -2040,12 +2029,6 @@ body {
 
 .social-links a:hover {
     color: var(--orange);
-}
-
-/* Animations */
-@keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.05); }
 }
 
 /* WhatsApp Float Button */
