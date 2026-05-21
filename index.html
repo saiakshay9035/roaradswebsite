@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Advertising in Bengaluru | LED Motorcycle Ads | Roar ADS</title>
     <meta name="description" content="Roar ADS — India's first Harley Davidson bike advertising network in Bengaluru. LED motorcycle billboard ads with real-time attention analytics. 1,09,878 impressions per ride. Book your campaign today.">
-    <meta name="keywords" content="bike advertising Bengaluru, motorcycle advertising India, LED bike advertising, Harley Davidson advertising India, mobile billboard advertising Bengaluru, outdoor advertising Bengaluru, moving billboard India, guerrilla advertising Bengaluru, motorcycle LED display ads, bike mounted LED advertising, street advertising Bengaluru, attention analytics advertising, unconventional advertising India, brand activation Bengaluru, experiential advertising India, two wheeler advertising India, mobile advertising network India, outdoor media Bengaluru, roar ads, roarads, bike ads India, motorcycle billboard India, LED outdoor advertising, digital bike advertising, Harley Davidson LED ads">
+    <meta name="keywords" content="bike advertising Bengaluru, motorcycle advertising India, LED bike advertising, Harley Davidson advertising, mobile billboard Bengaluru, guerrilla advertising India, outdoor advertising Bengaluru, moving billboard India">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Roar ADS">
     <meta name="theme-color" content="#FF6B00">
@@ -206,14 +206,14 @@
     }
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="logo"><img src="images/logo.png" alt="ROAR ADS" style="height:48px;width:auto;">
+            <div class="logo"><img src="images/logo.png" alt="ROAR ADS - Bike Advertising Bengaluru" style="height:48px;width:auto;"></div>
             <div class="nav-links">
                 <a href="#concept">Concept</a>
                 <a href="#what-you-get">What You Get</a>
@@ -243,11 +243,12 @@
                     <span class="line">Your Ad Was Seen.</span>
                     <span class="line">But Was It <span class="accent">Felt?</span></span>
                 </h1>
+                <p class="sr-only">Roar ADS — Bike Advertising in Bengaluru. LED motorcycle billboard ads on Harley Davidson with real-time attention analytics.</p>
                 <p class="hero-subtitle">Roar ADS puts your brand on a Harley-Davidson and rides it through the streets of Bengaluru — then tells you exactly how many people stopped, stared, and cared.</p>
                 
                 <div class="hero-actions">
-                    <button class="btn-primary" data-scroll="#brands">Book Your First Ride</button>
-                    <button class="btn-secondary" data-scroll="#riders">Become a Founding Rider</button>
+                    <a href="#brands" class="btn-primary" data-scroll="#brands">Book Your First Ride</a>
+                    <a href="#riders" class="btn-secondary" data-scroll="#riders">Become a Founding Rider</a>
                 </div>
             </div>
             
@@ -353,7 +354,7 @@
             
             <div class="tier-cards">
                 <div class="tier-card elite">
-                    <div class="tier-icon bike-icon"></div>
+                    <div class="tier-icon bike-icon" aria-label="Harley Davidson motorcycle with LED display"></div>
                     <div class="tier-badge">Step 01</div>
                     <h3>We Ride</h3>
                     <p>A Harley-Davidson equipped with a 360° camera and your LED billboard hits the streets — Indiranagar, Koramangala, Brigade Road, wherever your audience lives.</p>
@@ -366,7 +367,7 @@
                 </div>
                 
                 <div class="tier-card motion">
-                    <div class="tier-icon analytics-large"></div>
+                    <div class="tier-icon analytics-large" aria-label="AI attention analytics dashboard"></div>
                     <div class="tier-badge">Step 02</div>
                     <h3>AI Watches</h3>
                     <p>Our computer vision engine tracks every person in the frame, assigns them a unique ID, and measures exactly how long they looked at your ad. Zero faces stored. 100% privacy compliant.</p>
@@ -379,7 +380,7 @@
                 </div>
                 
                 <div class="tier-card base">
-                    <div class="tier-icon camera-icon"></div>
+                    <div class="tier-icon camera-icon" aria-label="360 degree camera for content creation"></div>
                     <div class="tier-badge">Step 03</div>
                     <h3>You Get Proof</h3>
                     <p>A professional analytics report lands in your inbox — footfall count, attention rate, peak engagement moments, and Instagram Reel clips of your highest-impact seconds.</p>
@@ -519,16 +520,21 @@
             </div>
             
             <div class="campaign-builder">
-                <form class="campaign-form">
+                <form class="campaign-form" aria-label="Book a bike advertising campaign">
                     <div class="form-row">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="text" placeholder="Brand / Company Name" required>
+                        <label class="sr-only" for="brand-name">Your Name</label>
+                        <input id="brand-name" type="text" placeholder="Your Name" aria-label="Your Name" required>
+                        <label class="sr-only" for="brand-company">Brand / Company Name</label>
+                        <input id="brand-company" type="text" placeholder="Brand / Company Name" aria-label="Brand or Company Name" required>
                     </div>
                     <div class="form-row">
-                        <input type="email" placeholder="Work Email" required>
-                        <input type="tel" placeholder="WhatsApp Number" required>
+                        <label class="sr-only" for="brand-email">Work Email</label>
+                        <input id="brand-email" type="email" placeholder="Work Email" aria-label="Work Email" required>
+                        <label class="sr-only" for="brand-phone">WhatsApp Number</label>
+                        <input id="brand-phone" type="tel" placeholder="WhatsApp Number" aria-label="WhatsApp Number" required>
                     </div>
-                    <select required>
+                    <label class="sr-only" for="brand-goal">What are you promoting?</label>
+                    <select id="brand-goal" aria-label="Campaign goal" required>
                         <option value="">What are you promoting?</option>
                         <option value="awareness">Brand Awareness</option>
                         <option value="launch">Product Launch</option>
@@ -536,7 +542,8 @@
                         <option value="app">App Downloads</option>
                         <option value="other">Other</option>
                     </select>
-                    <textarea placeholder="Anything specific you want us to know? (optional)" rows="3"></textarea>
+                    <label class="sr-only" for="brand-notes">Additional notes</label>
+                    <textarea id="brand-notes" placeholder="Anything specific you want us to know? (optional)" aria-label="Additional notes" rows="3"></textarea>
                     <button type="submit" class="btn-primary">Book Your First Ride</button>
                 </form>
                 
@@ -610,18 +617,23 @@
                 
                 <div class="rider-form">
                     <h3>Apply to Join</h3>
-                    <form>
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="tel" placeholder="Mobile Number" required>
-                        <input type="email" placeholder="Email Address">
-                        <select required>
+                    <form aria-label="Apply to join Roar ADS rider network">
+                        <label class="sr-only" for="rider-name">Full Name</label>
+                        <input id="rider-name" type="text" placeholder="Full Name" aria-label="Full Name" required>
+                        <label class="sr-only" for="rider-phone">Mobile Number</label>
+                        <input id="rider-phone" type="tel" placeholder="Mobile Number" aria-label="Mobile Number" required>
+                        <label class="sr-only" for="rider-email">Email Address</label>
+                        <input id="rider-email" type="email" placeholder="Email Address" aria-label="Email Address">
+                        <label class="sr-only" for="rider-vehicle">Vehicle Type</label>
+                        <select id="rider-vehicle" aria-label="Vehicle Type" required>
                             <option value="">Vehicle Type</option>
                             <option value="harley">Harley Davidson</option>
                             <option value="motorcycle">Motorcycle</option>
                             <option value="scooter">Scooter</option>
                             <option value="delivery">Delivery Bike</option>
                         </select>
-                        <select required>
+                        <label class="sr-only" for="rider-city">City</label>
+                        <select id="rider-city" aria-label="City" required>
                             <option value="">City</option>
                             <option value="bengaluru">Bengaluru (Launch City)</option>
                             <option value="mumbai">Mumbai (Expansion)</option>
@@ -643,7 +655,7 @@
                 <h2 class="data-headline">One Harley.<br>One Route.<br><span class="accent">1,09,878 Eyes.</span></h2>
                 <p class="data-sub">3 hours through peak Bengaluru traffic. Hosur Road, Koramangala, Indiranagar, Church Street. No other ad format reaches this many people this fast.</p>
                 <div class="data-actions">
-                    <button class="btn-primary btn-large" data-scroll="#brands">Book Your First Ride</button>
+                    <a href="#brands" class="btn-primary btn-large" data-scroll="#brands">Book Your First Ride</a>
     <a href="https://wa.me/919353946092?text=Hi%2C%20I'm%20interested%20in%20ROAR%20ADS" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
                 </div>
                 <ul class="data-benefits">
@@ -657,7 +669,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
+    <section class="faq">
         <div class="container">
             <div class="section-header">
                 <h2>Common Questions</h2>
@@ -692,14 +704,6 @@
         </div>
     </section>
 
-    <!-- SEO: Hidden keyword-rich content for search engines -->
-    <div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
-        <h2>Bike Advertising Services in Bengaluru, India</h2>
-        <p>Roar ADS offers motorcycle advertising, Harley Davidson LED billboard advertising, mobile bike advertising, and guerrilla advertising services in Bengaluru, Karnataka, India. Our moving LED displays on motorcycles deliver outdoor advertising with real-time attention analytics. Services include: bike mounted LED display advertising, motorcycle billboard advertising, two-wheeler advertising, mobile outdoor advertising, street-level brand activation, experiential advertising, moving billboard advertising, digital outdoor advertising on bikes, Harley Davidson brand advertising, LED screen motorcycle advertising, attention measurement advertising, computer vision ad analytics, GPS-tracked outdoor campaigns, viral moment advertising content, Instagram Reel ad generation, outdoor media Bengaluru, unconventional advertising India, guerrilla marketing Bengaluru, brand awareness campaigns Bengaluru, product launch advertising Bengaluru, event promotion advertising Bengaluru, app download advertising campaigns.</p>
-        <p>Service areas: MG Road Bengaluru, Koramangala Bengaluru, Indiranagar Bengaluru, HSR Layout Bengaluru, Whitefield Bengaluru, Electronic City Bengaluru, Brigade Road Bengaluru, Hosur Road Bengaluru, Jayanagar Bengaluru, JP Nagar Bengaluru, Marathahalli Bengaluru, Sarjapur Road Bengaluru.</p>
-        <p>Keywords: bike advertising, motorcycle advertising India, LED bike ads, Harley Davidson advertising Bengaluru, mobile billboard India, outdoor advertising startup India, attention analytics advertising, moving billboard Bengaluru, guerrilla advertising India, brand activation Bengaluru, two wheeler advertising India, motorcycle LED display, bike mounted advertising, street advertising India, digital outdoor advertising India.</p>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -717,9 +721,9 @@
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
-                        <a href="#">About</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Press</a>
+                        <a href="#brands">Advertise With Us</a>
+                        <a href="#riders">Become a Rider</a>
+                        <a href="#concept">How It Works</a>
                     </div>
                     <div class="footer-column">
                         <h4>Contact</h4>
