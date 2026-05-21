@@ -1360,90 +1360,6 @@ body {
     color: var(--silver);
 }
 
-/* Founder's Story Section */
-.founders-story {
-    padding: 120px 0;
-    background: var(--black);
-}
-
-.story-content {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.story-image {
-    position: relative;
-}
-
-.founder-photo {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 2px solid rgba(255, 107, 0, 0.3);
-}
-
-.story-text {
-    max-width: 600px;
-}
-
-.story-badge {
-    display: inline-block;
-    background: rgba(255, 107, 0, 0.1);
-    color: var(--orange);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-}
-
-.story-text h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: clamp(36px, 5vw, 48px);
-    margin-bottom: 32px;
-    letter-spacing: -0.02em;
-}
-
-.story-quote {
-    background: var(--glass);
-    border-left: 4px solid var(--orange);
-    padding: 24px;
-    margin-bottom: 32px;
-    border-radius: 8px;
-}
-
-.story-quote p {
-    font-size: 20px;
-    font-style: italic;
-    color: var(--silver);
-    line-height: 1.5;
-}
-
-.story-text p {
-    color: var(--silver);
-    line-height: 1.7;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.founder-signature {
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.signature-line {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: var(--orange);
-    font-size: 16px;
-}
-
 /* Riders Section */
 .riders {
     padding: 120px 0;
@@ -2214,7 +2130,6 @@ body {
     .tier-cards { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
     .early-access-cta { grid-template-columns: 1fr; gap: 40px; }
-    .story-content { grid-template-columns: 1fr; gap: 40px; }
     .package-grid { grid-template-columns: repeat(2, 1fr); }
     .package-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .package-card:last-child { border-bottom: none; }
@@ -2262,8 +2177,6 @@ body {
     .riders-content { grid-template-columns: 1fr; gap: 32px; }
     .rider-form { padding: 24px; }
     .why-grid { grid-template-columns: 1fr; }
-    .story-content { grid-template-columns: 1fr; gap: 32px; }
-    .founder-photo { height: 300px; }
     .data-inner { padding: 80px 0; }
     .data-headline { font-size: clamp(36px, 8vw, 56px); }
     .data-actions { flex-direction: column; align-items: center; }
