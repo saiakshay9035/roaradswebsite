@@ -271,20 +271,8 @@
     </section>
 
     <!-- Ticker -->
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span>1,09,878 IMPRESSIONS PER RIDE</span>
-            <span class="ticker-dot"></span>
-            <span>HARLEY DAVIDSON</span>
-            <span class="ticker-dot"></span>
-            <span>PEAK BENGALURU TRAFFIC</span>
-            <span class="ticker-dot"></span>
-            <span>360° CONTENT CREATION</span>
-            <span class="ticker-dot"></span>
-            <span>3 HOURS. 23KM. 24,173 HEADS TURNED.</span>
-            <span class="ticker-dot"></span>
-            <span>ATTENTION ANALYTICS</span>
-            <span class="ticker-dot"></span>
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker" id="ticker-track">
             <span>1,09,878 IMPRESSIONS PER RIDE</span>
             <span class="ticker-dot"></span>
             <span>HARLEY DAVIDSON</span>
@@ -676,30 +664,30 @@
                 <h2>Common Questions</h2>
                 <p>Everything brands ask before booking</p>
             </div>
-            <div class="faq-grid">
+            <div class="faq-accordion">
                 <div class="faq-item">
-                    <h4>How does a campaign work?</h4>
-                    <p>You send us your brand creative. We load it on the LED display, ride through your target areas during peak traffic, and send you GPS-verified proof-of-play footage the same day.</p>
+                    <button class="faq-question" aria-expanded="false">How does a campaign work? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>You send us your brand creative. We load it on the LED display, ride through your target areas during peak traffic, and send you GPS-verified proof-of-play footage the same day.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h4>What's the minimum campaign duration?</h4>
-                    <p>We recommend a minimum of 3 days to see meaningful reach. Most brands start with a 1-week pilot to test the format before scaling.</p>
+                    <button class="faq-question" aria-expanded="false">What's the minimum campaign duration? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>We recommend a minimum of 3 days to see meaningful reach. Most brands start with a 1-week pilot to test the format before scaling.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h4>How do I track my campaign?</h4>
-                    <p>Every ride is GPS-tracked. You get a daily report with routes covered, hours active, and footage from the ride. ERMS also monitors brand sentiment shifts during your campaign.</p>
+                    <button class="faq-question" aria-expanded="false">How do I track my campaign? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Every ride is GPS-tracked. You get a daily report with routes covered, hours active, and footage from the ride. ERMS also monitors brand sentiment shifts during your campaign.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h4>What areas do you cover in Bengaluru?</h4>
-                    <p>MG Road, Koramangala, Indiranagar, HSR Layout, Whitefield, and Electronic City corridors. Custom routes available on request.</p>
+                    <button class="faq-question" aria-expanded="false">What areas do you cover in Bengaluru? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>MG Road, Koramangala, Indiranagar, HSR Layout, Whitefield, and Electronic City corridors. Custom routes available on request.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h4>What creative format do you need?</h4>
-                    <p>MP4 video (10-30 seconds), 16:9 ratio, minimum 1080p. We can also help with basic creative if needed.</p>
+                    <button class="faq-question" aria-expanded="false">What creative format do you need? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>MP4 video (10-30 seconds), 16:9 ratio, minimum 1080p. We can also help with basic creative if needed.</p></div>
                 </div>
                 <div class="faq-item">
-                    <h4>Are you operational right now?</h4>
-                    <p>We're in beta testing phase. Founding brand slots are being confirmed now. Book your campaign and we'll schedule your launch date personally.</p>
+                    <button class="faq-question" aria-expanded="false">Are you operational right now? <span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>We're in beta testing phase. Founding brand slots are being confirmed now. Book your campaign and we'll schedule your launch date personally.</p></div>
                 </div>
             </div>
         </div>
@@ -710,7 +698,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">ROAR ADS</div>
+                    <div class="logo"><img src="images/logo.png" alt="ROAR ADS" style="height:40px;width:auto;"></div>
                     <p>Transforming urban mobility into premium advertising real estate.</p>
                 </div>
                 <div class="footer-links">

@@ -3,6 +3,47 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Ticker — clone items for seamless loop
+    const ticker = document.getElementById('ticker-track');
+    if (ticker) {
+        ticker.innerHTML += ticker.innerHTML;
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const item = this.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Nav scroll-spy
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('active'));
+                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { threshold: 0.4 });
+    sections.forEach(s => spyObserver.observe(s));
+
     // Hero entrance animations
     const heroTl = gsap.timeline({ delay: 0.5 });
 
