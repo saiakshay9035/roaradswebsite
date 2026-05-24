@@ -366,7 +366,7 @@ body {
 
 /* Campaign Package Section */
 .campaign-package {
-    padding: 140px 0;
+    padding: 160px 0;
     background: var(--dark-gray);
     position: relative;
     overflow: hidden;
@@ -455,10 +455,11 @@ body {
 
 .package-card h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 800;
+    font-size: clamp(28px, 3vw, 40px);
     margin-bottom: 16px;
     color: var(--white);
+    letter-spacing: -0.02em;
 }
 
 .package-card p {
@@ -486,7 +487,7 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .section-header h2 {
@@ -1696,13 +1697,11 @@ body {
 
 /* Bold Statement */
 .bold-statement {
-    padding: 140px 0;
-    background: var(--dark-gray);
+    padding: 200px 0;
+    background: var(--black);
     text-align: center;
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .bold-statement::before {
@@ -1747,7 +1746,7 @@ body {
 
 .data-inner {
     position: relative;
-    padding: 140px 0;
+    padding: 200px 0;
     overflow: hidden;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a0a00 50%, #0a0a0a 100%);
     border-top: 1px solid rgba(255, 107, 0, 0.2);
