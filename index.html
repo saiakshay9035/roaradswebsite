@@ -140,17 +140,15 @@
     <section class="numbers" id="numbers">
         <div class="numbers-inner">
             <div class="number-item reveal-up">
-                <span class="number-val">1,09,878</span>
+                <span class="number-val" data-target="109878">0</span>
                 <span class="number-label">Impressions<br>per ride</span>
             </div>
-            <div class="number-divider"></div>
             <div class="number-item reveal-up" style="transition-delay:0.15s">
-                <span class="number-val">24,173</span>
+                <span class="number-val" data-target="24173">0</span>
                 <span class="number-label">Heads that<br>physically turned</span>
             </div>
-            <div class="number-divider"></div>
             <div class="number-item reveal-up" style="transition-delay:0.3s">
-                <span class="number-val">2.5s</span>
+                <span class="number-val" data-target="2.5" data-decimals="1">0.0</span>
                 <span class="number-label">Average attention<br>held per person</span>
             </div>
         </div>
@@ -160,38 +158,47 @@
     <!-- STORY -->
     <section class="story" id="story">
         <div class="story-inner">
+            <div class="story-timeline-container">
+                <div class="story-timeline-track">
+                    <div class="story-timeline-fill"></div>
+                </div>
 
-            <div class="story-block reveal-up">
-                <div class="story-step">01</div>
-                <div class="story-content">
-                    <h2>We Ride.</h2>
-                    <p>A Harley-Davidson with a 24" LED display and a 360° camera hits Bengaluru's streets during peak hours. Indiranagar. Koramangala. MG Road. Brigade Road. Wherever your audience is stuck in traffic — we find them.</p>
-                    <p class="story-detail">The V&H exhaust cuts through traffic noise before the LED is even visible. Heads turn before they know why. That's not advertising. That's dominance.</p>
+                <div class="story-block reveal-up" data-step="1">
+                    <div class="story-step-node">
+                        <div class="story-step-dot"></div>
+                        <div class="story-step">01</div>
+                    </div>
+                    <div class="story-content">
+                        <h2>We Ride.</h2>
+                        <p>A Harley-Davidson with a 24" LED display and a 360° camera hits Bengaluru's streets during peak hours. Indiranagar. Koramangala. MG Road. Brigade Road. Wherever your audience is stuck in traffic — we find them.</p>
+                        <p class="story-detail">The V&H exhaust cuts through traffic noise before the LED is even visible. Heads turn before they know why. That's not advertising. That's dominance.</p>
+                    </div>
+                </div>
+
+                <div class="story-block reveal-up" data-step="2">
+                    <div class="story-step-node">
+                        <div class="story-step-dot"></div>
+                        <div class="story-step">02</div>
+                    </div>
+                    <div class="story-content">
+                        <h2>AI Watches.</h2>
+                        <p>Our computer vision engine tracks every person in frame. Assigns anonymous IDs. Measures exactly how long each person looked at your brand. Zero faces stored. Zero privacy compromised.</p>
+                        <p class="story-detail">When 3 or more people turn simultaneously — our system flags it as a Viral Moment and clips the footage automatically. That clip is yours.</p>
+                    </div>
+                </div>
+
+                <div class="story-block reveal-up" data-step="3">
+                    <div class="story-step-node">
+                        <div class="story-step-dot"></div>
+                        <div class="story-step">03</div>
+                    </div>
+                    <div class="story-content">
+                        <h2>You Get Proof.</h2>
+                        <p>A same-day report lands in your inbox. Impressions. Attention rate. Viral moment clips. GPS route. Peak engagement timestamps. Not estimated. Counted.</p>
+                        <p class="story-detail">Use the clips for Instagram. Use the data for your boardroom. Use the report to prove every rupee worked.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="story-separator"></div>
-
-            <div class="story-block reveal-up">
-                <div class="story-step">02</div>
-                <div class="story-content">
-                    <h2>AI Watches.</h2>
-                    <p>Our computer vision engine tracks every person in frame. Assigns anonymous IDs. Measures exactly how long each person looked at your brand. Zero faces stored. Zero privacy compromised.</p>
-                    <p class="story-detail">When 3 or more people turn simultaneously — our system flags it as a Viral Moment and clips the footage automatically. That clip is yours.</p>
-                </div>
-            </div>
-
-            <div class="story-separator"></div>
-
-            <div class="story-block reveal-up">
-                <div class="story-step">03</div>
-                <div class="story-content">
-                    <h2>You Get Proof.</h2>
-                    <p>A same-day report lands in your inbox. Impressions. Attention rate. Viral moment clips. GPS route. Peak engagement timestamps. Not estimated. Counted.</p>
-                    <p class="story-detail">Use the clips for Instagram. Use the data for your boardroom. Use the report to prove every rupee worked.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -345,7 +352,6 @@
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2026 Roar ADS Technologies. All rights reserved.</span>
-                <span>Brand Intelligence by <a href="https://e-rms.co" target="_blank" rel="noopener noreferrer">ERMS</a></span>
             </div>
         </div>
     </footer>

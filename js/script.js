@@ -24,6 +24,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- NUMBERS COUNTER ANIMATION ---
+    const numberVals = document.querySelectorAll('.number-val');
+    numberVals.forEach(val => {
+        const target = parseFloat(val.getAttribute('data-target'));
+        const decimals = parseInt(val.getAttribute('data-decimals')) || 0;
+        const countObj = { value: 0 };
+        gsap.to(countObj, {
+            value: target,
+            duration: 1.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.numbers',
+                start: 'top 85%',
+                once: true
+            },
+            onUpdate: () => {
+                let formattedValue;
+                if (decimals > 0) {
+                    formattedValue = countObj.value.toFixed(decimals) + 's';
+                } else {
+                    formattedValue = Math.floor(countObj.value).toLocaleString('en-IN');
+                }
+                val.textContent = formattedValue;
+            }
+        });
+    });
+
+    // --- STORY TIMELINE PROGRESS & STEP HIGHLIGHTING ---
+    const timelineFill = document.querySelector('.story-timeline-fill');
+    const storyBlocks = document.querySelectorAll('.story-block');
+    if (timelineFill && storyBlocks.length > 0) {
+        gsap.to(timelineFill, {
+            height: '100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.story-timeline-container',
+                start: 'top 40%',
+                end: 'bottom 60%',
+                scrub: 0.3
+            }
+        });
+
+        storyBlocks.forEach(block => {
+            ScrollTrigger.create({
+                trigger: block,
+                start: 'top 50%',
+                end: 'bottom 50%',
+                onEnter: () => block.classList.add('active-step'),
+                onEnterBack: () => block.classList.add('active-step'),
+                onLeave: () => block.classList.remove('active-step'),
+                onLeaveBack: () => block.classList.remove('active-step')
+            });
+        });
+    }
+
     // --- MANIFESTO PARALLAX ---
     gsap.to('.manifesto-line', {
         yPercent: -15,
