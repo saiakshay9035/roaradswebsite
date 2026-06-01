@@ -30,23 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = parseFloat(val.getAttribute('data-target'));
         const decimals = parseInt(val.getAttribute('data-decimals')) || 0;
         const countObj = { value: 0 };
-        gsap.to(countObj, {
-            value: target,
-            duration: 1.8,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '.numbers',
-                start: 'top 85%',
-                once: true
-            },
-            onUpdate: () => {
-                let formattedValue;
-                if (decimals > 0) {
-                    formattedValue = countObj.value.toFixed(decimals) + 's';
-                } else {
-                    formattedValue = Math.floor(countObj.value).toLocaleString('en-IN');
-                }
-                val.textContent = formattedValue;
+        
+        ScrollTrigger.create({
+            trigger: '.numbers',
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                gsap.to(countObj, {
+                    value: target,
+                    duration: 1.8,
+                    ease: 'power2.out',
+                    onUpdate: () => {
+                        let formattedValue;
+                        if (decimals > 0) {
+                            formattedValue = countObj.value.toFixed(decimals) + 's';
+                        } else {
+                            formattedValue = Math.floor(countObj.value).toLocaleString('en-IN');
+                        }
+                        val.textContent = formattedValue;
+                    }
+                });
             }
         });
     });
