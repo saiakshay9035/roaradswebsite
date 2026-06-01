@@ -926,8 +926,9 @@ textarea{
 
 .footer-top{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-start;
     padding-bottom:60px;
     border-bottom:1px solid var(--line);
 }
