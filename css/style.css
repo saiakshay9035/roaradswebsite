@@ -909,7 +909,7 @@ p{
     border-radius:24px;
     padding:60px 40px;
     margin-bottom:80px;
-    text-align:center;
+    text-align:left;
 }
 
 .diagram-track-title{
@@ -919,52 +919,47 @@ p{
     letter-spacing:.22em;
     color:var(--orange);
     margin-bottom:44px;
+    text-align:center;
 }
 
-.diagram-cols{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    position:relative;
+.diagram-track {
+    margin-bottom:40px;
 }
 
-.diagram-cols::after{
-    content:'';
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:50%;
-    width:1px;
-    background:var(--line);
-    transform:translateX(-50%);
+.diagram-track:last-child {
+    margin-bottom:0;
 }
 
-.diagram-col-title{
-    font-size:16px;
+.track-label {
+    font-size:14px;
     font-weight:700;
     color:white;
-    margin-bottom:32px;
+    margin-bottom:16px;
     letter-spacing:0.02em;
 }
 
-.diagram-flow{
+.track-flow {
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     align-items:center;
-    gap:12px;
+    gap:16px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding-bottom:10px;
 }
 
 .flow-node{
     background:#141414;
     border:1px solid rgba(255, 255, 255, 0.06);
-    padding:16px 28px;
+    padding:14px 24px;
     border-radius:12px;
     font-size:14px;
     font-weight:600;
     color:#9f9f9f;
-    width:100%;
-    max-width:240px;
+    flex:1;
+    min-width:180px;
     text-align:center;
+    white-space:nowrap;
 }
 
 .highlight-red{
@@ -985,6 +980,7 @@ p{
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-shrink:0;
 }
 
 .flow-arrow.active-arrow{
@@ -1514,14 +1510,7 @@ textarea{
         margin-bottom:60px;
     }
 
-    .diagram-cols{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
 
-    .diagram-cols::after{
-        display:none;
-    }
 
     .capabilities-grid{
         grid-template-columns:repeat(2, 1fr);

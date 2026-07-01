@@ -302,45 +302,44 @@
             <!-- Yesterday vs Today Flowchart Diagram -->
             <div class="comparison-diagram reveal-up">
                 <div class="diagram-track-title">Evolution of OOH Measurement</div>
-                <div class="diagram-cols">
-                    <!-- Left: Traditional OOH -->
-                    <div class="diagram-col traditional-col">
-                        <div class="diagram-col-title">Traditional OOH</div>
-                        <div class="diagram-flow">
-                            <div class="flow-node">Billboard</div>
-                            <div class="flow-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node highlight-red">Estimated Reach</div>
-                            <div class="flow-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node">PDF Report</div>
+                
+                <!-- Track 1: Traditional OOH -->
+                <div class="diagram-track traditional-track">
+                    <div class="track-label">Traditional OOH</div>
+                    <div class="track-flow">
+                        <div class="flow-node">Billboard</div>
+                        <div class="flow-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </div>
+                        <div class="flow-node highlight-red">Estimated Reach</div>
+                        <div class="flow-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                        <div class="flow-node">PDF Report</div>
                     </div>
+                </div>
 
-                    <!-- Right: Powered by Roar ADS -->
-                    <div class="diagram-col roar-col">
-                        <div class="diagram-col-title">Powered by Roar ADS</div>
-                        <div class="diagram-flow">
-                            <div class="flow-node">Billboard</div>
-                            <div class="flow-arrow active-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node highlight-orange">Measured Attention</div>
-                            <div class="flow-arrow active-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node">Live Dashboard</div>
-                            <div class="flow-arrow active-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node">Client Portal</div>
-                            <div class="flow-arrow active-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                            </div>
-                            <div class="flow-node">API Integration</div>
+                <!-- Track 2: Powered by Roar ADS -->
+                <div class="diagram-track roar-track">
+                    <div class="track-label">Powered by Roar ADS</div>
+                    <div class="track-flow">
+                        <div class="flow-node">Billboard</div>
+                        <div class="flow-arrow active-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </div>
+                        <div class="flow-node highlight-orange">Measured Attention</div>
+                        <div class="flow-arrow active-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                        <div class="flow-node highlight-orange">Live Dashboard</div>
+                        <div class="flow-arrow active-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                        <div class="flow-node highlight-orange">Client Portal</div>
+                        <div class="flow-arrow active-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                        <div class="flow-node highlight-orange">API Integration</div>
                     </div>
                 </div>
             </div>
